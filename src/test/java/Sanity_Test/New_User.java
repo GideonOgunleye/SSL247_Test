@@ -67,7 +67,7 @@ public class New_User {
 	public String Aftermethod (ITestResult result) throws IOException, Exception {
 		
 		String filename = result.getMethod().getMethodName() +".png";
-	    String Directory = "C:\\Users\\Gideon Okunleye\\workspace\\SSL247_Test\\test-output\\Extent Report\\SanityScreenShoots\\";
+	    String Directory = "C:\\Users\\Gideon Okunleye\\Documents\\Testing Documents\\Sanity ScreenShots\\";
 		  
 	    File sourceFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(sourceFile, new File(Directory + filename));

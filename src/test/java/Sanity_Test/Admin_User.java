@@ -9,7 +9,7 @@ import com.relevantcodes.extentreports.LogStatus;
 import PageFactory.ExtentFactory;
 
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
+//import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 
 import java.io.File;
@@ -25,6 +25,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -83,7 +84,7 @@ public class Admin_User {
 	  
 	  //Take Screen Shots
 	  String filename = result.getMethod().getMethodName() +".png";
-	  String Directory = "C:\\Users\\Gideon Okunleye\\workspace\\SSL247_Test\\test-output\\Extent Report\\SanityScreenShoots\\";
+	  String Directory = "C:\\Users\\Gideon Okunleye\\Documents\\Testing Documents\\Sanity ScreenShots\\";
 	  
 	  File sourceFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 	  FileUtils.copyFile(sourceFile, new File(Directory + filename));
@@ -659,12 +660,16 @@ public class Admin_User {
   }
   
   @BeforeTest (groups = {"Sanity"})
-  public void beforeTest() {
+  public void Beforetest() {
 	  
-	     System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
-		 driver = new ChromeDriver();  
+	    System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+		driver = new ChromeDriver();  
 		
 		 
+	/*  
+	  WebDriver driver = new HtmlUnitDriver();
+	  driver.get("http://www.google.com");
+	 */ 
 
 		//report = new ExtentReports("C:\\Users\\Gideon Okunleye\\workspace\\SSL247_Test\\test-output\\Extent Report\\Admin_User.html"); 
 		 //test = report.startTest("Verify Test");
