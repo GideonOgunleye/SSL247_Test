@@ -83,7 +83,7 @@ public class Admin_User {
 	  
 	  //Take Screen Shots
 	  String filename = result.getMethod().getMethodName() +".png";
-	  String Directory = "c:\\Users\\Gideon Okunleye\\Documents\\Testing Documents\\Test ScreenShots\\";
+	  String Directory = "C:\\Users\\Gideon Okunleye\\workspace\\SSL247_Test\\test-output\\Extent Report\\SanityScreenShoots\\";
 	  
 	  File sourceFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 	  FileUtils.copyFile(sourceFile, new File(Directory + filename));
