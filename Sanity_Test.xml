@@ -27,7 +27,7 @@
    </classes> 
   </test><!--  Test -->
   
- <test name="Test 4">
+  <test name="Test 4">
      <classes>
       <class name="Sanity_Test.SQL_Queries"/>
    </classes> 
