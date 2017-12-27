@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 
-import PageFactory.ExtentFactory;
+import BaseUtilities.ExtentFactory;
 
 import org.testng.annotations.BeforeSuite;
 
@@ -23,11 +23,11 @@ public class SQL_Queries {
 	ExtentReports report;
 	ExtentTest test;
 	
-	  @Test (priority = 1, groups = {"SQL"})
+	  @Test (priority = 1, groups = {"SQL","BS_Regression"})
 	  public void SQL_Certificate_Order () throws SQLException, ClassNotFoundException {
 		  
 			//Connection URL Syntax: "jdbc:mysql://ipaddress:portnumber/db_name"		
-	      String dbUrl = "jdbc:mysql://notcraft-prod.covetytyjb4n.eu-west-1.rds.amazonaws.com";					
+	      String dbUrl = "jdbc:mysql://notcraft3.covetytyjb4n.eu-west-1.rds.amazonaws.com";					
 
 			//Database Username		
 			String username = "gogunleye";	

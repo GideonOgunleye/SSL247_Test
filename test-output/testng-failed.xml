@@ -4,23 +4,17 @@
   <test name="Test 1(failed)">
     <groups>
       <run>
-        <include name="Sanity"/>
-        <include name="SQL"/>
+        <include name="BS_Smoke"/>
       </run>
     </groups>
     <classes>
-      <class name="Sanity_Test.Admin_User">
+      <class name="Sanity_Test.IndexPageBrokenLinksTest">
         <methods>
-          <include name="Send_Change_Password_Request_Email"/>
-          <include name="Admin_Login"/>
-          <include name="Log_Out"/>
-          <include name="Send_Fulfillment_Email"/>
-          <include name="Edit_Account_User"/>
-          <include name="afterTest"/>
-          <include name="Create_Proposal"/>
-          <include name="Beforetest"/>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+          <include name="HomePage_Test" invocation-numbers="0 1 2 3 4 5 6 7"/>
         </methods>
-      </class> <!-- Sanity_Test.Admin_User -->
+      </class> <!-- Sanity_Test.IndexPageBrokenLinksTest -->
     </classes>
   </test> <!-- Test 1(failed) -->
 </suite> <!-- Failed suite [Suite] -->

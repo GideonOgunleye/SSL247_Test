@@ -3,15 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="Sanity_Test.Registered_User">
+      <class name="Sanity_Test.IndexPageBrokenLinksTest">
         <methods>
-          <include name="afterTest"/>
           <include name="beforeTest"/>
-          <include name="User_Login"/>
-          <include name="Domain_Name_Ordering"/>
-          <include name="User_Logout"/>
+          <include name="beforeMethod"/>
+          <include name="afterTest"/>
+          <include name="afterMethod"/>
+          <include name="HomePage_Test"/>
         </methods>
-      </class> <!-- Sanity_Test.Registered_User -->
+      </class> <!-- Sanity_Test.IndexPageBrokenLinksTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
