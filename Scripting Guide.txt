@@ -1,0 +1,286 @@
+
+//Find Element By Name
+driver.findElement(By.name("data[User][email]")).sendKeys(prop.getProperty("Username"));
+
+//Find Element By XPath
+driver.findElement(By.xpath(".//*[@id='UserMysslLoginForm']/button")).click();
+driver.findElement(By.xpath(".//*[@class='ssl-brochure']")).click();
+
+//Find Element By LinkText
+driver.findElement(By.linkText("My Products")).click();
+
+//Find Element By CssSelector
+driver.findElement(By.cssSelector("a[href*='support']")).click();
+
+//Intialize ExtantReport Example
+		report = ExtentFactory.getInstance2();
+		test = report.startTest(Product);
+	    test.log(LogStatus.INFO, "User Logged in");
+		report.endTest(test);
+		report.flush();
+		
+//Constant File
+public class Constants {
+	
+    public static final String URL = "https://ssl247:wpmsBv9P@automation-live.ssl247.co.uk";
+    public static final String File_Path = "C://Users//Gideon Okunleye//workspace//AutomationTestScripts//";
+    public static final String ExcelFile_Path = "C:\\Users\\Gideon Okunleye\\workspace\\AutomationTestScripts\\";
+    public static final String ExcelFile_Name = "ExcelData.xlsx";
+    public static final String DataFile_Name = "DataDriving.Properties";
+    
+}
+
+//Intialize Constant File with Properties File
+		  	Properties prop = new Properties();
+			FileInputStream fis = new FileInputStream(Constants.File_Path + Constants.DataFile_Name);
+					 
+			prop.load(fis);
+			
+			//Example
+				try { 
+				 
+					driver.get(prop.getProperty("Url")); 
+					driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+					driver.manage().window().maximize();
+					
+					ClickLoginLink();
+					driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+					EnterUserName(prop.getProperty("AdUserName"));
+					EnterPassword(prop.getProperty("AdPassword"));
+					driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+					ClickLoginButton();
+				  
+				 }catch (Exception e) {
+					 
+					 System.out.println(e);
+				 }
+		
+
+
+//Action Class to Move mouse to Display Submenu
+	driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+  	Actions  actions=new Actions(driver);
+  	WebElement ProductsLink=driver.findElement(By.xpath(".//*[@id='mainNavigation']/li[3]/a"));
+  	actions.moveToElement(ProductsLink);
+  	driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+  	WebElement CertificatesLink=driver.findElement(By.xpath(".//*[@id='mainNavigation']/li[3]/ul/li[1]/a"));
+    actions.moveToElement(CertificatesLink);
+  	actions.click();
+  	actions.perform();
+
+
+
+
+//Action class sample to click on drop down menus 
+		 Actions  Mouse=new Actions(driver);
+	     WebElement Dropdown=driver.findElement(By.xpath(".//*[@id='DataTables_Table_0']/tbody/tr[1]/td[9]/div/button"));
+	     Mouse.click(Dropdown);
+	     driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+	     WebElement EyeIcon=driver.findElement(By.xpath(".//*[@id='DataTables_Table_0']/tbody/tr[1]/td[9]/div/ul/li[1]/a"));
+	     Mouse.moveToElement(EyeIcon);
+	     Mouse.click();
+	     Mouse.perform();
+		 
+		 	 
+//For selecting WebElements options
+		 WebElement AccessLevel = driver.findElement(By.xpath(".//*[@id='UserAccessLevel']"));
+		 Select Level = new Select(AccessLevel);
+		 Level.selectByVisibleText("Super User");
+		 
+		 Select sel = new Select(driver.findElement(By.id("selectsId")));
+		 sel.selectByIndex(3);
+		 
+		 WebElement UserRole = driver.findElement(By.xpath(".//*[@id='UserRole']"));
+		 Select Role = new Select(UserRole);
+		 Role.selectByValue("1");
+
+//Implicit wait to wait for an element to display
+		 WebDriverWait wait = new WebDriverWait(driver, 20);	
+		 WebElement Endusers;
+		 Endusers = wait.until(ExpectedConditions.visibilityOfElementLocated (By.xpath(".//*[@id='mainContainer']/div[7]/div[1]/ul/li[22]/a")));
+		 Endusers.click();
+		 
+		 
+//If Else to for searching for differnt conditions
+
+         String UserVal = "Quality Assurance Tester";
+		 WebElement User = driver.findElement(By.xpath(".//*[@id='mainContainer']/div[7]/div[2]/div[2]/div[1]/div/address/strong[1]"));
+		 WebElement User2 = driver.findElement(By.xpath(".//*[@id='mainContainer']/div[7]/div[2]/div[2]/div[2]/div/address/strong[1]"));
+		 WebElement User3 = driver.findElement(By.xpath(".//*[@id='mainContainer']/div[7]/div[2]/div[2]/div[3]/div/address/strong[1]"));
+		 WebElement User4 = driver.findElement(By.xpath(".//*[@id='mainContainer']/div[7]/div[2]/div[2]/div[4]/div/address/strong[1]"));
+
+
+		if(User.getText().equals(UserVal)){
+				
+			 driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+			 Actions  actions=new Actions(driver);
+		     WebElement menuHoverLink=driver.findElement(By.xpath(".//*[@id='mainContainer']/div[7]/div[2]/div[2]/div[1]/div/address/div[2]/div/button"));
+		     actions.click(menuHoverLink);
+		     driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+		     WebElement subLink=driver.findElement(By.xpath(".//*[@id='mainContainer']/div[7]/div[2]/div[2]/div[1]/div/address/div[2]/div/ul/li[1]/a"));
+		     actions.moveToElement(subLink);
+		     actions.click();
+		     actions.perform();
+		     
+		     //Edit User
+		     WebElement AccessLevel = driver.findElement(By.xpath(".//*[@id='UserAccessLevel']"));
+			 Select Level = new Select(AccessLevel);
+			 Level.selectByVisibleText("Super User");
+			 
+			//Click Save User
+			 driver.findElement(By.xpath(".//*[@id='UserAdminEditForm']/div[2]/button")).click();
+				 
+			}else if (User2.getText().equals(UserVal)) {
+				
+				driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+				 Actions  actions=new Actions(driver);
+			     WebElement menuHoverLink=driver.findElement(By.xpath(".//*[@id='mainContainer']/div[7]/div[2]/div[2]/div[2]/div/address/div[2]/div/button"));
+			     actions.click(menuHoverLink);
+			     driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+			     WebElement subLink=driver.findElement(By.xpath(".//*[@id='mainContainer']/div[7]/div[2]/div[2]/div[2]/div/address/div[2]/div/ul/li[1]/a"));
+			     actions.moveToElement(subLink);
+			     actions.click();
+			     actions.perform();
+			     
+			     //Edit User
+			     WebElement AccessLevel = driver.findElement(By.xpath(".//*[@id='UserAccessLevel']"));
+				 Select Level = new Select(AccessLevel);
+				 Level.selectByVisibleText("Super User");
+				 
+				//Click Save User
+				 driver.findElement(By.xpath(".//*[@id='UserAdminEditForm']/div[2]/button")).click();
+			}else  {
+				 
+				System.out.println("Quality Tester User Not Found");
+				
+			 }
+
+//Data Properties File for inputing data from a file always run true condition
+		 @BeforeMethod (alwaysRun = true)
+		 public void Admin_Login() throws Exception {
+	  
+	//Log in As Administrator
+		 Properties prop = new Properties();
+		 FileInputStream fis = new FileInputStream("C://Users//Gideon Okunleye//workspace//SSL247_Test//DataDrivingAdmin.properties");
+					 
+		 prop.load(fis);
+
+		 driver.get(prop.getProperty("Url")); 
+		 driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+		 driver.manage().window().maximize();
+		 String title = driver.getTitle();				 
+		 Assert.assertTrue(title.contains("SSL Certificates: Buy Symantec, Thawte, Apache SSL Cert, GlobalSign, GeoTrust, RapidSSL- SSL247.co.uk")); 
+						
+		 driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+		 driver.findElement(By.linkText("Login")).click();
+		 driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+		 driver.findElement(By.name("data[User][email]")).sendKeys(prop.getProperty("Username"));
+		 driver.findElement(By.name("data[User][password]")).sendKeys(prop.getProperty("Password"));
+		 driver.findElement(By.xpath(".//*[@id='UserMysslLoginForm']/button")).click();
+		 
+  }
+  
+ //Scroll a page
+		JavascriptExecutor jse = (JavascriptExecutor)driver;
+		jse.executeScript("window.scrollBy(0,500)", "");
+		driver.findElement(By.name("data[User][address_1]")).sendKeys("63 Lisson St,");
+		driver.findElement(By.name("data[User][city]")).sendKeys("London");
+		
+//Navigate to submenu linkText
+		//Navigate to Certificates
+		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+		Actions  actions=new Actions(driver);
+		WebElement menuHoverLink=driver.findElement(By.xpath(".//*[@id='mainNavigation']/li[2]/a"));
+		actions.moveToElement(menuHoverLink);
+		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+	    WebElement subLink=driver.findElement(By.xpath(".//*[@id='special-ul']/li[1]/ul/li[1]/a/span[1]"));
+		actions.moveToElement(subLink);
+		actions.click();
+		actions.perform();
+		
+//Contains Method for Asserting Partial Text when using getText()
+	String AccountName = "UK TEST";
+	String Status = "Issued";
+	WebElement Col1 = driver.findElement(By.xpath(".//*[@id='DataTables_Table_0']/tbody/tr[1]/td[2]"));
+	WebElement StatusCol = driver.findElement(By.xpath(".//*[@id='DataTables_Table_0']/tbody/tr[1]/td[5]"));
+
+	
+	if (Col1.getText().contains(AccountName)){
+		
+		System.out.println("Account Found");
+		
+		if (StatusCol.getText().equals(Status)) {
+			
+			System.out.println("issued Cert found");
+			//driver.findElement(By.xpath(".//*[@id='DataTables_Table_0']/tbody/tr[1]/td[8]/a/i")).click();	
+			Result.click();
+		}else {
+			
+			System.out.println("No issued cert present");
+			//driver.close();
+		}
+		
+	}else {
+		
+		System.out.println("Account Not Found");
+		//driver.close();
+	}
+			
+			
+//Assert for confirming an element is present on a page
+		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+	  	String SendStatus = driver.findElement(By.xpath("html/body/div[4]/p[1]")).getText();	
+	  	Assert.assertTrue(SendStatus.contains("Certificate has been emailed to qa@ssl247.co.uk"));
+
+//Assert for confirming an element is present on a page with Try Catch		
+		try {
+			
+			if (driver.findElement(By.xpath("html/body/div[4]/p[1]")).isDisplayed()) {
+			
+				String OrderStatus = driver.findElement(By.xpath("html/body/div[4]/p[1]")).getText();
+			  	Assert.assertTrue(OrderStatus.contains("Thank You. Your order has been placed."));
+			  	test.log(LogStatus.PASS, " Order Placed");
+		  		System.out.println(ProductLink + " Order Placed");
+			}
+		
+		}catch(Exception e) {
+			
+			System.out.println(ProductLink + " Order NOT Placed or Status Alert not Displayed");
+	  	
+		}
+		
+OR 
+//Making Use of Page Factory
+public String PageHeaderAssert() {
+		
+		return PageHeader.getText();
+	
+	}
+
+if (sslDashBoardElements.PageHeaderAssert().contains(StatusMsg)) {
+			
+			test.log(LogStatus.PASS, "User Sucessfully Registered");
+			
+		}else {
+			
+			test.log(LogStatus.FAIL, "User not Sucessfully Registered");
+		}
+		
+		Assert.assertTrue(sslDashBoardElements.PageHeaderAssert().contains("MySSL® » Dashboard"));
+		
+//Condition for Passing or Failing on ExtantReport		
+try {
+			
+			if (driver.findElement(By.xpath(".//*[@class='btn btn-success btn-small']")).isDisplayed()) {
+			
+				System.out.println("Account Has Enough Funds");
+				test.log(LogStatus.PASS, " Account Has Enough Funds");
+				driver.findElement(By.xpath(".//*[@class='btn btn-success btn-small']")).click();
+				
+			}
+		
+		}catch(Exception e) {
+			System.out.println("Account Does Not Have Enough Funds");
+			test.log(LogStatus.FAIL, "Account Does Not Have Enough Funds");
+		
+			}

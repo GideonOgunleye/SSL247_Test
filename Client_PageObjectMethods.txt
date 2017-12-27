@@ -1,0 +1,68 @@
+
+//After Page Class
+
+	AlertBox	AlertBoxElements;
+	ExtentReports report;
+	ExtentTest test;
+	TakeScreenShot ScreenShot;
+	CsR CsrElements;
+	Client_AccountEndUsersPage	Client_AccountEndUsersPageElements;
+	Client_AddAccountPage	Client_AddAccountPageElements;
+	Client_AddToBasketPage	Client_AddToBasketPageElemnts;
+	Client_BillingPage	Client_BillingPageElements;
+	Client_CertificateDetailsPage	Client_CertificateDetailsPageElements;
+	Client_CertificatesPage	Client_CertificatesPageElements;
+	Client_CertificateValidationPage	Client_CertificateValidationPageElements;
+	Client_ClientAccountsPage	Client_ClientAccountsPageElements;
+	Client_CodeSigningCertsValidationPage	Client_CodeSigningCertsValidationPageElements;
+	Client_DomainNamesEditPage	Client_DomainNamesEditPageElements;
+	Client_EditUserPage	Client_EditUserPageElements;
+	Client_IncompleteCertificatesPage	Client_IncompleteCertificatesPageElements;
+	Client_IncompleteCodeSigningCertsPage	Client_IncompleteCodeSigningCertsPageElements;
+	Client_IncompleteSmimePage	Client_IncompleteSmimePageElements;
+	Client_IssuedCertificatesPage	Client_IssuedCertificatesPageElements;
+	Client_LoginPage	Client_LoginPageElements;
+	Client_MyProductsPage	Client_MyProductsPageElements;
+	Client_MySslDashBoard	Client_MySslDashBoardElements;
+	Client_MyUsersPage	Client_MyUsersPageElements;
+	Client_NavigationLinks	Client_NavigationLinksElements;
+	Client_NewUserPage	Client_NewUserPageElements;
+	Client_PendingCertificatesPage	Client_PendingCertificatesPageElements;
+	Client_RegisterDomainPage	Client_RegisterDomainPageElements;
+	Client_ShoppingBasketPage	Client_ShoppingBasketPageElements;
+	Client_SmimeValidationPage	Client_SmimeValidationPageElements;
+	Client_ViewOrderPage	Client_ViewOrderPageElements;
+
+
+
+//Inside BeforeMethod
+
+		AlertBoxElements	= new AlertBox(driver);
+		CsrElements	= new CsR(driver);
+		ScreenShot	= new TakeScreenShot();
+		Client_AccountEndUsersPageElements	 = new Client_AccountEndUsersPage(driver);
+		Client_AddAccountPageElements	 = new Client_AddAccountPage(driver);
+		Client_AddToBasketPageElemnts	 = new Client_AddToBasketPage(driver);
+		Client_BillingPageElements	 = new Client_BillingPage(driver);
+		Client_CertificateDetailsPageElements	 = new Client_CertificateDetailsPage(driver);
+		Client_CertificatesPageElements	 = new Client_CertificatesPage(driver);
+		Client_CertificateValidationPageElements	 = new Client_CertificateValidationPage(driver);
+		Client_ClientAccountsPageElements	 = new Client_ClientAccountsPage(driver);
+		Client_CodeSigningCertsValidationPageElements	 = new Client_CodeSigningCertsValidationPage(driver);
+		Client_DomainNamesEditPageElements	 = new Client_DomainNamesEditPage(driver);
+		Client_EditUserPageElements	 = new Client_EditUserPage(driver);
+		Client_IncompleteCertificatesPageElements	 = new Client_IncompleteCertificatesPage(driver);
+		Client_IncompleteCodeSigningCertsPageElements	 = new Client_IncompleteCodeSigningCertsPage(driver);
+		Client_IncompleteSmimePageElements	 = new Client_IncompleteSmimePage(driver);
+		Client_IssuedCertificatesPageElements	 = new Client_IssuedCertificatesPage(driver);
+		Client_LoginPageElements	 = new Client_LoginPage(driver);
+		Client_MyProductsPageElements	 = new Client_MyProductsPage(driver);
+		Client_MySslDashBoardElements	 = new Client_MySslDashBoard(driver);
+		Client_MyUsersPageElements	 = new Client_MyUsersPage(driver);
+		Client_NavigationLinksElements	 = new Client_NavigationLinks(driver);
+		Client_NewUserPageElements	 = new Client_NewUserPage(driver);
+		Client_PendingCertificatesPageElements	 = new Client_PendingCertificatesPage(driver);
+		Client_RegisterDomainPageElements	 = new Client_RegisterDomainPage(driver);
+		Client_ShoppingBasketPageElements	 = new Client_ShoppingBasketPage(driver);
+		Client_SmimeValidationPageElements	 = new Client_SmimeValidationPage(driver);
+		Client_ViewOrderPageElements	 = new Client_ViewOrderPage(driver);

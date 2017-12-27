@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+  <groups>
+    <run>
+    <include name="Smoke"/>
+    </run>
+ </groups> 
+
+
+ <!-- <test name="Test 1">
+   <parameter name="config" value="Regression_IndexPageBrokenLinks.json"/>
+   <parameter name="environment" value="chrome"/>
+   <classes>
+      <class name="Sanity_Test.IndexPageBrokenLinksTest"/>
+      
+    </classes>    
+  </test> Test -->
+  
+   <test name="Test 2">
+  	  <!--  <parameter name="config" value="Regression_MainMenuBrokenLinks.json"/>-->
+       <!--  <parameter name="environment" value="chrome"/>-->
+   <classes>
+      <class name="Sanity_Test.IndexPageBrokenLinksTest"/>
+    </classes>    
+  </test><!-- Test -->
+  
+<!--  <test name="Test 3">
+    <parameter name="config" value="Regression_SubMenuBrokenLinks.json"/>
+    <parameter name="environment" value="chrome"/>
+  
+   <classes>
+      <class name="Sanity_Test.SubMenuBrokenLinks"/>
+    </classes>    
+  </test> Test -->
+  
+</suite> <!-- Suite -->
