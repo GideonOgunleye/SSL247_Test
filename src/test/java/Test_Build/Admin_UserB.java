@@ -102,7 +102,7 @@ public class Admin_UserB {
 			//Click Save User
 			 driver.findElement(By.xpath(".//*[@id='UserAdminEditForm']/div[2]/button")).click();
 				 
-			}else if (driver.findElement(By.xpath(".//*[@class='row v-margin']/div[1]/div/address/strong[1]")).equals(UserVal)) {
+			}else if (driver.findElement(By.xpath(".//*[@class='row v-margin']/div[1]/div/address/strong[1]")).getText().equals(UserVal)) {
 				
 				driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 				 Actions  actions=new Actions(driver);
